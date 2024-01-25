@@ -1,14 +1,10 @@
 <?php
 
-require_once 'RestClient.php';
-require_once 'LocationIQClient.php';
+require_once __DIR__ . '/../vendor/autoload.php';
+use api\LocationIQClient;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $apiKey = "pk.67fd68b34c4522133213238c5fa97c18";
-    $baseUrl = "https://eu1.locationiq.com";
-
-    $restClient = new RestClient($apiKey, $baseUrl);
-    $locationIQClient = new LocationIQClient($restClient);
+    $locationIQClient = new LocationIQClient();
 
     if (isset($_POST['address'])) {
         $address = $_POST['address'];

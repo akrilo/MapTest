@@ -1,5 +1,7 @@
 <?php
 
+namespace http;
+
 class RestClient {
     protected $apiKey;
     private $baseUrl;
